@@ -1,0 +1,112 @@
+@font-face {
+    font-family: "TrajanPro";
+    src: url("../fontes/TrajanPro-Bold.otf") format('opentype'),
+         url("../fontes/TrajanPro-Regular.ttf") format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'TrajanPro', sans-serif;
+    font-size: 13px;
+}
+
+body {
+    background-color: rgb(217, 217, 217);
+}
+
+/* Header */
+#menu {
+    width: 100%;
+    height: 85px;
+    background-color: rgb(0, 83, 134);
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7rem;
+}
+
+#menu a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.funcional {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.funcional img {
+    width: 27px;
+    height: 27px;
+}
+
+/* Main */
+#container-geral {
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+#container-reconhecimento {
+    display: flex;
+    width: 65%;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+#container-imagem {
+    width: 50%;
+    height: 100%;
+}
+
+#container-imagem img {
+    width: 100%;
+    height: 100%;
+}
+
+#mensagem-aviso {
+    width: 40%;
+    height: 45px;
+    border-radius: 10px;
+    border: 1px solid rgb(0, 0, 0);
+    text-align: center;
+    line-height: 45px;
+}
+
+#mensagem-aviso span {
+    color: rgb(0, 146, 62);
+}
+
+#historico {
+    width: 85%;
+}
+
+#historico table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+#historico thead {
+    background-color: rgb(217, 217, 217);
+}
+
+#historico th, td {
+    padding: 5px;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+#historico th {
+    font-weight: bold;
+}
