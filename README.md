@@ -5,4 +5,4 @@
 - HTML5
 - CSS3
 - React (framework) 18.3.1
-- Node v22.4.1
+- Node 22.4.1
