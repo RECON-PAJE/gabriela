@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useEffect } from "react";
 import '../css/inicial.css';
 
 function Login() {
+  useEffect(() => {
+    document.body.style.backgroundColor = 'rgb(0, 83, 134)';
+
+    return () => {
+      document.body.style.backgroundColor = '';
+    }
+  }, []);
+
   return (
-    <div id="container-geral">
+    <div id="container-geral-inicial">
       <main>
         <div id="icone">
           <img src="/img/cadastro-login.svg" alt="ícone-usuário" />

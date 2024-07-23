@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useEffect } from "react";
 import { Link } from 'react-router-dom'; 
 import '../css/inicial.css'; 
 
 function Inicial() {
+  useEffect(() => {
+    document.body.style.backgroundColor = 'rgb(0, 83, 134)';
+
+    return () => {
+      document.body.style.backgroundColor = '';
+    }
+  }, []);
+
   return (
-    <div id="container-geral">
+    <div id="container-geral-inicial">
       <main id="main-inicial">
         <div id="icone-inicial">
           <img src="/img/cadastro-login.svg" alt="ícone-usuário" />
