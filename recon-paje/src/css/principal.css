@@ -58,13 +58,13 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 #container-imagem {
-    width: 50%;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
+    height: 100%;
+    width: auto;
+    border: 2px solid rgb(255, 255, 255);
 }
 
 #container-imagem img {
@@ -120,4 +120,38 @@
 
 #historico th {
     font-weight: bold;
+}
+
+#paginacao {
+    display: flex;
+    width: auto;
+    height: 50px;
+    gap: 1rem;
+    align-items: baseline;
+}
+
+#paginacao img {
+    height: 40px;
+    width: auto;
+}
+
+#pagina-atual {
+    height: 45px !important;
+}
+
+/* Responsividade */
+@media screen and (max-width: 1200px) {
+    #mensagem-aviso {
+        height: auto;
+    }
+
+    #historico {
+        width: 95%;
+        gap: .5rem;
+    }
+
+    #historico th, td {
+        padding: 4px;
+        font-size: 12px;
+    }
 }

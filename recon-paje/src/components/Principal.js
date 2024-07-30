@@ -105,6 +105,34 @@ function Principal() {
                 <td>3 crédito(s)</td>
                 <td>20/06 - 11:45</td>
               </tr>
+              <tr>
+                <td>220****681</td>
+                <td>123********01</td>
+                <td>Gabriela Moura Silva</td>
+                <td>3 crédito(s)</td>
+                <td>20/06 - 11:45</td>
+              </tr>
+              <tr>
+                <td>220****681</td>
+                <td>123********01</td>
+                <td>Gabriela Moura Silva</td>
+                <td>3 crédito(s)</td>
+                <td>20/06 - 11:45</td>
+              </tr>
+              <tr>
+                <td>220****681</td>
+                <td>123********01</td>
+                <td>Gabriela Moura Silva</td>
+                <td>3 crédito(s)</td>
+                <td>20/06 - 11:45</td>
+              </tr>
+              <tr>
+                <td>220****681</td>
+                <td>123********01</td>
+                <td>Gabriela Moura Silva</td>
+                <td>3 crédito(s)</td>
+                <td>20/06 - 11:45</td>
+              </tr>
             </tbody>
           </table>
           <div id="pag-seta">
@@ -113,6 +141,11 @@ function Principal() {
               alt="icone-seta-direita"
             />
           </div>
+        </div>
+        <div id="paginacao">
+          <img src="/img/um.png"></img>
+          <img src="/img/dois.png" id="pagina-atual"></img>
+          <img src="/img/tres.png"></img>
         </div>
       </main>
     </>
