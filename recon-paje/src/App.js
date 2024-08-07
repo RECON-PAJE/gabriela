@@ -4,6 +4,7 @@ import Inicial from './components/Inicial';
 import Login from './components/Login';
 import Cadastro from './components/Cadastro';
 import Principal from './components/Principal';
+import GerarRelatorio from './components/GerarRelatorio';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/principal" element={<Principal />} />
+        <Route path="/gerarrelatorio" element={<GerarRelatorio />} />
       </Routes>
     </Router>
   );
