@@ -40,6 +40,21 @@
     height: 27px;
 }
 
+/* Barra de pesquisa */
+input {
+    background-color: rgb(194, 193, 193);
+    height: 30px;
+    width: 190px;
+    border-radius: 10px;
+    border: none;
+    position: absolute;
+    top: 4%;
+    left: 2%;
+    font-size: 10px;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
 /* Main */
 #container-geral-principal {
     margin: 0 auto;
@@ -94,6 +109,7 @@
 }
 
 #pag-seta {
+    cursor: pointer;
     width: 45px;
     height: 35px;
 }
@@ -110,7 +126,7 @@
 }
 
 #historico thead {
-    background-color: rgb(217, 217, 217);
+    background-color: rgb(255, 255, 255);
 }
 
 #historico th, td {
@@ -127,22 +143,48 @@
     width: auto;
     height: 50px;
     gap: 1rem;
-    align-items: baseline;
+    align-items: center;
 }
 
 #paginacao img {
+    cursor: pointer;
     height: 40px;
     width: auto;
 }
 
-#pagina-atual {
-    height: 45px !important;
+.pagina-atual {
+    height: 70px;
+    border-bottom: 2px solid rgb(0, 0, 0);
 }
+
 
 /* Responsividade */
 @media screen and (max-width: 1200px) {
+    #menu {
+        gap: 3rem;
+    }
+
+    #menu a,
+    #menu p {
+        font-size: 10px;
+    }
+
+    .funcional img {
+        width: 20px;
+        height: 20px;
+    }
+
+    input {
+        width: 150px;
+    }
+
     #mensagem-aviso {
+        padding: 0 6px;
         height: auto;
+    }
+
+    #mensagem-aviso span {
+        font-size: 10px;
     }
 
     #historico {

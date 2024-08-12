@@ -1,37 +1,86 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../css/principal.css";
 
 function Principal() {
+  const [mostrarInput, setMostrarInput] = useState(false);
+  const [paginaAtual, setPaginaAtual] = useState(1);
+  const [dadosPorPagina] = useState(10);
+  const [historico, setHistorico] = useState([
+    { cartao: '220****681', cpf: '123********01', nome: 'Gabriela Moura Silva', saldo: '3 crédito(s)', dataHora: '20/06 - 11:45' },
+    { cartao: '220****681', cpf: '123********01', nome: 'Gabriela Moura Silva', saldo: '3 crédito(s)', dataHora: '20/06 - 11:45' },
+    { cartao: '220****681', cpf: '123********01', nome: 'Gabriela Moura Silva', saldo: '3 crédito(s)', dataHora: '20/06 - 11:45' },
+    { cartao: '220****681', cpf: '123********01', nome: 'Gabriela Moura Silva', saldo: '3 crédito(s)', dataHora: '20/06 - 11:45' },
+    { cartao: '220****681', cpf: '123********01', nome: 'Gabriela Moura Silva', saldo: '3 crédito(s)', dataHora: '20/06 - 11:45' },
+    { cartao: '220****681', cpf: '123********01', nome: 'Gabriela Moura Silva', saldo: '3 crédito(s)', dataHora: '20/06 - 11:45' },
+    { cartao: '220****681', cpf: '123********01', nome: 'Gabriela Moura Silva', saldo: '3 crédito(s)', dataHora: '20/06 - 11:45' },
+    { cartao: '220****681', cpf: '123********01', nome: 'Gabriela Moura Silva', saldo: '3 crédito(s)', dataHora: '20/06 - 11:45' },
+    { cartao: '220****681', cpf: '123********01', nome: 'Gabriela Moura Silva', saldo: '3 crédito(s)', dataHora: '20/06 - 11:45' },
+    { cartao: '220****681', cpf: '123********01', nome: 'Gabriela Moura Silva', saldo: '3 crédito(s)', dataHora: '20/06 - 11:45' },
+    { cartao: '220****681', cpf: '123********01', nome: 'Gabriela Moura Silva', saldo: '3 crédito(s)', dataHora: '20/06 - 11:45' },
+  ]);
+
+  const inputRef = useRef(null);
+
   useEffect(() => {
-    document.body.style.backgroundColor = "rgb(217, 217, 217)";
+    const handleClickOutside = (event) => {
+      if (inputRef.current && !inputRef.current.contains(event.target)) {
+        setMostrarInput(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
 
     return () => {
-      document.body.style.backgroundColor = "";
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+
+  const handleConsultarSaldoClick = () => {
+    setMostrarInput(true);
+  };
+
+  const totalPaginas = Math.ceil(historico.length / dadosPorPagina);
+  const dadosPaginaAtual = historico.slice(
+    (paginaAtual - 1) * dadosPorPagina,
+    paginaAtual * dadosPorPagina
+  );
+
+  const mudarPagina = (pagina) => {
+    if (pagina >= 1 && pagina <= totalPaginas) {
+      setPaginaAtual(pagina);
+    }
+  };
 
   return (
     <>
       <header id="menu">
         <div className="funcional">
-          <img src="/img/user-check.svg" alt="ícone-de-usuário" />
-          <a href="#">Consultar saldo</a>
+          <img src="/img/user-check.svg" alt="Ícone de usuário" />
+          <a href="#" onClick={handleConsultarSaldoClick}>Consultar saldo</a>
         </div>
         <div className="funcional">
-          <img src="/img/file-text.svg" alt="ícone-de-relatório" />
+          <img src="/img/file-text.svg" alt="Ícone de relatório" />
           <a href="#">Gerar relatório</a>
         </div>
         <div className="funcional">
-          <img src="/img/Vector.svg" alt="ícone-de-gráfico" />
+          <img src="/img/Vector.svg" alt="Ícone de gráfico" />
           <p>10 Acessos</p>
         </div>
       </header>
+      <div>
+        <input
+          type="text"
+          placeholder="Insira uma matrícula"
+          style={{ display: mostrarInput ? "block" : "none" }}
+          ref={inputRef}
+        />
+      </div>
       <main id="container-geral-principal">
         <div id="container-reconhecimento">
           <div id="container-imagem">
             <img
               src="/img/reconhecimento_facial.jpg"
-              alt="imagem-ilustrativa-reconhecimento-facial"
+              alt="Imagem ilustrativa de reconhecimento facial"
             />
           </div>
           <div id="mensagem-aviso">
@@ -42,7 +91,8 @@ function Principal() {
           <div id="pag-seta">
             <img
               src="/img/anterior.png"
-              alt="icone-seta-esquerda"
+              alt="Ícone seta esquerda"
+              onClick={() => mudarPagina(paginaAtual - 1)}
             />
           </div>
           <table>
@@ -56,96 +106,35 @@ function Principal() {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>220****681</td>
-                <td>123********01</td>
-                <td>Gabriela Moura Silva</td>
-                <td>3 crédito(s)</td>
-                <td>20/06 - 11:45</td>
-              </tr>
-              <tr>
-                <td>220****681</td>
-                <td>123********01</td>
-                <td>Gabriela Moura Silva</td>
-                <td>3 crédito(s)</td>
-                <td>20/06 - 11:45</td>
-              </tr>
-              <tr>
-                <td>220****681</td>
-                <td>123********01</td>
-                <td>Gabriela Moura Silva</td>
-                <td>3 crédito(s)</td>
-                <td>20/06 - 11:45</td>
-              </tr>
-              <tr>
-                <td>220****681</td>
-                <td>123********01</td>
-                <td>Gabriela Moura Silva</td>
-                <td>3 crédito(s)</td>
-                <td>20/06 - 11:45</td>
-              </tr>
-              <tr>
-                <td>220****681</td>
-                <td>123********01</td>
-                <td>Gabriela Moura Silva</td>
-                <td>3 crédito(s)</td>
-                <td>20/06 - 11:45</td>
-              </tr>
-              <tr>
-                <td>220****681</td>
-                <td>123********01</td>
-                <td>Gabriela Moura Silva</td>
-                <td>3 crédito(s)</td>
-                <td>20/06 - 11:45</td>
-              </tr>
-              <tr>
-                <td>220****681</td>
-                <td>123********01</td>
-                <td>Gabriela Moura Silva</td>
-                <td>3 crédito(s)</td>
-                <td>20/06 - 11:45</td>
-              </tr>
-              <tr>
-                <td>220****681</td>
-                <td>123********01</td>
-                <td>Gabriela Moura Silva</td>
-                <td>3 crédito(s)</td>
-                <td>20/06 - 11:45</td>
-              </tr>
-              <tr>
-                <td>220****681</td>
-                <td>123********01</td>
-                <td>Gabriela Moura Silva</td>
-                <td>3 crédito(s)</td>
-                <td>20/06 - 11:45</td>
-              </tr>
-              <tr>
-                <td>220****681</td>
-                <td>123********01</td>
-                <td>Gabriela Moura Silva</td>
-                <td>3 crédito(s)</td>
-                <td>20/06 - 11:45</td>
-              </tr>
-              <tr>
-                <td>220****681</td>
-                <td>123********01</td>
-                <td>Gabriela Moura Silva</td>
-                <td>3 crédito(s)</td>
-                <td>20/06 - 11:45</td>
-              </tr>
+              {dadosPaginaAtual.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.cartao}</td>
+                  <td>{item.cpf}</td>
+                  <td>{item.nome}</td>
+                  <td>{item.saldo}</td>
+                  <td>{item.dataHora}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
           <div id="pag-seta">
             <img
               src="/img/posterior.png"
-              alt="icone-seta-direita"
+              alt="Ícone seta direita"
+              onClick={() => mudarPagina(paginaAtual + 1)}
             />
           </div>
         </div>
         <div id="paginacao">
-          <img src="/img/um.png"></img>
-          <img src="/img/dois.png" id="pagina-atual"></img>
-          <img src="/img/tres.png"></img>
+          {Array.from({ length: totalPaginas }, (_, i) => i + 1).map(pagina => (
+            <img
+              key={pagina}
+              src={`/img/${pagina}.png`}
+              alt={`Página ${pagina}`}
+              className={pagina === paginaAtual ? "pagina-atual" : ""}
+              onClick={() => mudarPagina(pagina)}
+            />
+          ))}
         </div>
       </main>
     </>
