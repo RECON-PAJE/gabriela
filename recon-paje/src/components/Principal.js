@@ -6,17 +6,83 @@ function Principal() {
   const [paginaAtual, setPaginaAtual] = useState(1);
   const [dadosPorPagina] = useState(10);
   const [historico, setHistorico] = useState([
-    { cartao: '220****681', cpf: '123********01', nome: 'Gabriela Moura Silva', saldo: '3 crédito(s)', dataHora: '20/06 - 11:45' },
-    { cartao: '220****681', cpf: '123********01', nome: 'Gabriela Moura Silva', saldo: '3 crédito(s)', dataHora: '20/06 - 11:45' },
-    { cartao: '220****681', cpf: '123********01', nome: 'Gabriela Moura Silva', saldo: '3 crédito(s)', dataHora: '20/06 - 11:45' },
-    { cartao: '220****681', cpf: '123********01', nome: 'Gabriela Moura Silva', saldo: '3 crédito(s)', dataHora: '20/06 - 11:45' },
-    { cartao: '220****681', cpf: '123********01', nome: 'Gabriela Moura Silva', saldo: '3 crédito(s)', dataHora: '20/06 - 11:45' },
-    { cartao: '220****681', cpf: '123********01', nome: 'Gabriela Moura Silva', saldo: '3 crédito(s)', dataHora: '20/06 - 11:45' },
-    { cartao: '220****681', cpf: '123********01', nome: 'Gabriela Moura Silva', saldo: '3 crédito(s)', dataHora: '20/06 - 11:45' },
-    { cartao: '220****681', cpf: '123********01', nome: 'Gabriela Moura Silva', saldo: '3 crédito(s)', dataHora: '20/06 - 11:45' },
-    { cartao: '220****681', cpf: '123********01', nome: 'Gabriela Moura Silva', saldo: '3 crédito(s)', dataHora: '20/06 - 11:45' },
-    { cartao: '220****681', cpf: '123********01', nome: 'Gabriela Moura Silva', saldo: '3 crédito(s)', dataHora: '20/06 - 11:45' },
-    { cartao: '220****681', cpf: '123********01', nome: 'Gabriela Moura Silva', saldo: '3 crédito(s)', dataHora: '20/06 - 11:45' },
+    {
+      cartao: "220****681",
+      cpf: "123********01",
+      nome: "Gabriela Moura Silva",
+      saldo: "3 crédito(s)",
+      dataHora: "20/06 - 11:45",
+    },
+    {
+      cartao: "220****681",
+      cpf: "123********01",
+      nome: "Gabriela Moura Silva",
+      saldo: "3 crédito(s)",
+      dataHora: "20/06 - 11:45",
+    },
+    {
+      cartao: "220****681",
+      cpf: "123********01",
+      nome: "Gabriela Moura Silva",
+      saldo: "3 crédito(s)",
+      dataHora: "20/06 - 11:45",
+    },
+    {
+      cartao: "220****681",
+      cpf: "123********01",
+      nome: "Gabriela Moura Silva",
+      saldo: "3 crédito(s)",
+      dataHora: "20/06 - 11:45",
+    },
+    {
+      cartao: "220****681",
+      cpf: "123********01",
+      nome: "Gabriela Moura Silva",
+      saldo: "3 crédito(s)",
+      dataHora: "20/06 - 11:45",
+    },
+    {
+      cartao: "220****681",
+      cpf: "123********01",
+      nome: "Gabriela Moura Silva",
+      saldo: "3 crédito(s)",
+      dataHora: "20/06 - 11:45",
+    },
+    {
+      cartao: "220****681",
+      cpf: "123********01",
+      nome: "Gabriela Moura Silva",
+      saldo: "3 crédito(s)",
+      dataHora: "20/06 - 11:45",
+    },
+    {
+      cartao: "220****681",
+      cpf: "123********01",
+      nome: "Gabriela Moura Silva",
+      saldo: "3 crédito(s)",
+      dataHora: "20/06 - 11:45",
+    },
+    {
+      cartao: "220****681",
+      cpf: "123********01",
+      nome: "Gabriela Moura Silva",
+      saldo: "3 crédito(s)",
+      dataHora: "20/06 - 11:45",
+    },
+    {
+      cartao: "220****681",
+      cpf: "123********01",
+      nome: "Gabriela Moura Silva",
+      saldo: "3 crédito(s)",
+      dataHora: "20/06 - 11:45",
+    },
+    {
+      cartao: "220****681",
+      cpf: "123********01",
+      nome: "Gabriela Moura Silva",
+      saldo: "3 crédito(s)",
+      dataHora: "20/06 - 11:45",
+    },
   ]);
 
   const inputRef = useRef(null);
@@ -28,10 +94,10 @@ function Principal() {
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
@@ -56,7 +122,9 @@ function Principal() {
       <header id="menu">
         <div className="funcional">
           <img src="/img/user-check.svg" alt="Ícone de usuário" />
-          <a href="#" onClick={handleConsultarSaldoClick}>Consultar saldo</a>
+          <a href="#" onClick={handleConsultarSaldoClick}>
+            Consultar saldo
+          </a>
         </div>
         <div className="funcional">
           <img src="/img/file-text.svg" alt="Ícone de relatório" />
@@ -67,13 +135,12 @@ function Principal() {
           <p>10 Acessos</p>
         </div>
       </header>
-      <div>
-        <input
-          type="text"
-          placeholder="Insira uma matrícula"
-          style={{ display: mostrarInput ? "block" : "none" }}
-          ref={inputRef}
-        />
+      <div
+        className="input-container"
+        style={{ display: mostrarInput ? "block" : "none" }}
+      >
+        <input type="text" placeholder="Insira uma matrícula" ref={inputRef} />
+        <img src="/img/pesquisa.svg" alt="Ícone" />
       </div>
       <main id="container-geral-principal">
         <div id="container-reconhecimento">
@@ -126,15 +193,17 @@ function Principal() {
           </div>
         </div>
         <div id="paginacao">
-          {Array.from({ length: totalPaginas }, (_, i) => i + 1).map(pagina => (
-            <img
-              key={pagina}
-              src={`/img/${pagina}.png`}
-              alt={`Página ${pagina}`}
-              className={pagina === paginaAtual ? "pagina-atual" : ""}
-              onClick={() => mudarPagina(pagina)}
-            />
-          ))}
+          {Array.from({ length: totalPaginas }, (_, i) => i + 1).map(
+            (pagina) => (
+              <img
+                key={pagina}
+                src={`/img/${pagina}.png`}
+                alt={`Página ${pagina}`}
+                className={pagina === paginaAtual ? "pagina-atual" : ""}
+                onClick={() => mudarPagina(pagina)}
+              />
+            )
+          )}
         </div>
       </main>
     </>

@@ -41,19 +41,33 @@
 }
 
 /* Barra de pesquisa */
-input {
-    background-color: rgb(194, 193, 193);
-    height: 30px;
-    width: 190px;
-    border-radius: 10px;
-    border: none;
+.input-container {
+    width: 200px;
     position: absolute;
     top: 4%;
     left: 2%;
+}
+
+.input-container input {
+    background-color: rgb(194, 193, 193);
+    height: 30px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
     font-size: 10px;
     box-sizing: border-box;
-    padding: 5px;
+    padding: 7px;
 }
+
+.input-container img {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    pointer-events: none;
+}
+
 
 /* Main */
 #container-geral-principal {
@@ -174,8 +188,8 @@ input {
         height: 20px;
     }
 
-    input {
-        width: 150px;
+    .input-container {
+        width: 160px;
     }
 
     #mensagem-aviso {
