@@ -5,6 +5,7 @@ import Login from './components/Login';
 import Cadastro from './components/Cadastro';
 import Principal from './components/Principal';
 import GerarRelatorio from './components/GerarRelatorio';
+import Periodos from './components/Periodos';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/principal" element={<Principal />} />
         <Route path="/gerarrelatorio" element={<GerarRelatorio />} />
+        <Route path="/periodos" element={<Periodos />} />
       </Routes>
     </Router>
   );
