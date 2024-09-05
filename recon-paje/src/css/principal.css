@@ -212,12 +212,13 @@
     }
 
     #historico {
-        width: 95%;
-        gap: .5rem;
+        width: 100%;
+        gap: .3rem;
     }
 
-    #historico th, td {
+    #historico th, 
+    #historico td {
         padding: 4px;
-        font-size: 12px;
+        font-size: 10px;
     }
 }
