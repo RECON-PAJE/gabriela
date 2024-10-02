@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import "../css/principal.css";
 
 function Principal() {
@@ -101,6 +102,12 @@ function Principal() {
     };
   }, []);
 
+  useEffect(() => {
+    if (mostrarInput && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [mostrarInput]);
+
   const handleConsultarSaldoClick = () => {
     setMostrarInput(true);
   };
@@ -128,7 +135,9 @@ function Principal() {
         </div>
         <div className="funcional">
           <img src="/img/file-text.svg" alt="Ícone de relatório" />
-          <a href="#">Gerar relatório</a>
+          <Link to="/gerarrelatorio" state={{ historico }}>
+            Gerar relatório
+          </Link>
         </div>
         <div className="funcional">
           <img src="/img/Vector.svg" alt="Ícone de gráfico" />

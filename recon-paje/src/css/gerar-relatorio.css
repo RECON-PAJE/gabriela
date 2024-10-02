@@ -44,6 +44,11 @@ body {
     height: 27px;
 }
 
+#home-relatorio {
+    position: absolute;
+    right: 20px;
+}
+
 /* Main */
 #container-geral-relatorio {
     margin: 0 auto;
@@ -108,14 +113,27 @@ body {
 
 /* Responsividade */
 @media screen and (max-width: 1200px) {
-    #historico-relatorio {
-        width: 95%;
-        gap: .5rem;
+    #menu-relatorio {
+        gap: 3rem;
     }
 
-    #historico-relatorio th, td {
+    #menu-relatorio a {
+        font-size: 10px;
+    }
+
+    .funcional-relatorio img {
+        width: 20px;
+        height: 20px;
+    }
+
+    #historico-relatorio {
+        width: 95%;
+    }
+
+    #historico-relatorio th, 
+    #historico-relatorio td {
         padding: 4px;
-        font-size: 12px;
+        font-size: 10px;
     }
 
     #infos {
