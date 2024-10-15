@@ -87,6 +87,7 @@ function Principal() {
   ]);
 
   const inputRef = useRef(null);
+  const videoRef = useRef(null);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -111,6 +112,19 @@ function Principal() {
   const handleConsultarSaldoClick = () => {
     setMostrarInput(true);
   };
+
+  useEffect(() => {
+    if (videoRef.current) {
+      navigator.mediaDevices
+        .getUserMedia({ video: true })
+        .then((stream) => {
+          videoRef.current.srcObject = stream;
+        })
+        .catch((err) => {
+          console.error("Erro ao acessar a câmera: ", err);
+        });
+    }
+  }, [videoRef]);
 
   const totalPaginas = Math.ceil(historico.length / dadosPorPagina);
   const dadosPaginaAtual = historico.slice(
@@ -154,9 +168,11 @@ function Principal() {
       <main id="container-geral-principal">
         <div id="container-reconhecimento">
           <div id="container-imagem">
-            <img
-              src="/img/reconhecimento_facial.jpg"
-              alt="Imagem ilustrativa de reconhecimento facial"
+            <video
+              ref={videoRef}
+              autoPlay
+              playsInline
+              style={{ width: "100%" }}
             />
           </div>
           <div id="mensagem-aviso">
