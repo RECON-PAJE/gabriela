@@ -47,10 +47,10 @@
 
 /* Barra de pesquisa */
 .input-container {
-    width: 200px;
+    width: 300px;
     position: absolute;
-    top: 4%;
-    left: 2%;
+    top: 23px;
+    left: 20px;
 }
 
 .input-container input {
@@ -199,6 +199,9 @@
 
     .input-container {
         width: 160px;
+        position: absolute;
+        top: 23px;
+        left: 8px;
     }
 
     #mensagem-aviso {
